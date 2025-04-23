@@ -55,7 +55,7 @@ return ResponseEntity.ok(productDTOS);
 
 }
 
-@GetMapping("findByPriceInRange")
+@GetMapping("/findByPriceInRange")
 public ResponseEntity<?> findByPriceInRange(@RequestBody PriceRangeDTO priceRange){
     List<ProductDTO> productsDTO = this.iProductService.findByPriceInRange(priceRange.getMinPrice(),priceRange.getMaxPrice()).stream().map(product ->
 
@@ -67,5 +67,8 @@ public ResponseEntity<?> findByPriceInRange(@RequestBody PriceRangeDTO priceRang
 return ResponseEntity.ok(productsDTO);
 
 }
+
+
+
 
 }
